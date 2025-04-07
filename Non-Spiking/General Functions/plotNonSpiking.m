@@ -17,7 +17,7 @@ for ii = 1:width(thisoClass.o)
     grid minor
     plot(thisoPeaks.t,thisoPeaks.o,'r*')
     ylabel(thisoClass.inputClassUsed.names(ii))
-    ylim([0 1])
+    ylim([-0.1 1.1])
 
     if ii == 1
         title(sprintf("%s Model Output Timeseries",thisoClass.inputClassUsed.model))
