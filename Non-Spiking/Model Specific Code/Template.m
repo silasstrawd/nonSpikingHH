@@ -3,7 +3,7 @@ clc
 close all
 
 % Initialize Input Class
-thisiClass = Ausborn;
+thisiClass = Rubin;
 
 % Make Modifications as Needed
 % thisiClass.C(1) = 10;
