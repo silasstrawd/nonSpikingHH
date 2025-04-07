@@ -25,7 +25,11 @@ for ii = 1:width(thisoClass.o)
         xlabel("Time [s]")
     end
 
+    axii(ii) = gca;
+
 end
+
+linkaxes(axii,'x')
 
 % if strcmp(model,"Ausborn")
 %     figure("Color","w")
