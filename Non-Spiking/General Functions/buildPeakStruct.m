@@ -25,6 +25,4 @@ for ii = 1:numNeurons
 end
 
 % Generate peakStruct for each neural group
-peakStruct = findNeuralPeaks(t,o);
-
-
+peakStruct = findNeuralPeaks(t,o,thisiClass);
