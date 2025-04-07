@@ -117,42 +117,4 @@ classdef Ausborn
 
     end
 
-    methods
-
-        function thisoClass = Ausborn5NeuronSimulation(thisiClass)
-
-            % Define Inhibitory and Excitatory Connection Strengths
-            thisiClass.WE = zeros(5);
-            thisiClass.WE(thisiClass.Wnom > 0) = thisiClass.Wnom(thisiClass.Wnom > 0);
-
-            thisiClass.WI = zeros(5);
-            thisiClass.WI(thisiClass.Wnom < 0) = abs(thisiClass.Wnom(thisiClass.Wnom < 0));
-
-            % Convert Input Class time to seconds
-            thisiClass.tMax     = thisiClass.tMax     * 1000;
-            thisiClass.tStepOn  = thisiClass.tStepOn  * 1000;
-            thisiClass.tStepOff = thisiClass.tStepOff * 1000;
-
-            % Run ode solver using the input class and structure the results
-            [t,x] = ode45(@(t,x) AusbornSim(t,x,thisiClass),[0 thisiClass.tMax],thisiClass.x0,thisiClass.options);
-
-            % Do stuff with the t,x matrices depending on the flags from
-            % the input class
-
-            % Initialize Output Class
-            thisoClass = AusbornOutputClass;
-
-            % Pack on results
-            thisoClass.t    = t;
-            thisoClass.v    = x(:,1:5);
-            thisoClass.hNaP = x(:,6:10);
-            thisoClass.mAD  = x(:,11:15);
-            thisoClass.inputClassUsed = thisiClass;
-            thisoClass.peakStruct = buildPeakStruct(thisoClass);
-            % thisoClass.o = AusbornVoltageToOutput(thisoClass.v,thisiClass.kV); % To be added later
-
-        end
-
-   end
-
 end
