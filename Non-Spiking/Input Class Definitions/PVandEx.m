@@ -14,31 +14,32 @@ classdef PVandEx
     properties
     % Neuron Parameters================================================
     % Capacitance [pF]
-    C(2,1) = [20 20]'; % [pre-I early-I aug-E post-I post-IpBC]
+    C(2,1) = [20 20]'; % [pre-I early-I]
     
     % Maximal Conductances [nS] -- setting these to 0 turns off a channel
-    gNaP_max(2,1)  = [ 5    0  ]';   % [pre-I early-I aug-E post-I post-IpBC]
-    gK_max(2,1)    = [ 5    0  ]';   % [pre-I early-I aug-E post-I post-IpBC]
-    gAD_max(2,1)   = [ 0   10  ]';   % [pre-I early-I aug-E post-I post-IpBC]
-    gL_max(2,1)    = [ 2.8  2.8]'; % [pre-I early-I aug-E post-I post-IpBC]
-    gsynE_max(2,1) = [10   10  ]';   % [pre-I early-I aug-E post-I post-IpBC]
-    gsynI_max(2,1) = [60   60  ]';   % [pre-I early-I aug-E post-I post-IpBC]
-    gChR_max(2,1)  = [ 8    8  ]';   % [pre-I early-I aug-E post-I post-IpBC]
+    gNaP_max(2,1)  = [ 5    0  ]';   % [pre-I early-I]
+    gK_max(2,1)    = [ 5    0  ]';   % [pre-I early-I]
+    gAD_max(2,1)   = [ 0   10  ]';   % [pre-I early-I]
+    gL_max(2,1)    = [ 2.8  2.8]';   % [pre-I early-I]
+    gsynE_max(2,1) = [10   10  ]';   % [pre-I early-I]
+    gsynI_max(2,1) = [60   60  ]';   % [pre-I early-I]
+    gChR_max(2,1)  = [ 8    8  ]';   % [pre-I early-I]
     
     % Reversal Potentials [mV] -- do these change if we define v as e - e_rest?
-    ENa(2,1)   = [ 50  50]'; % [pre-I early-I aug-E post-I post-IpBC]
-    EK(2,1)    = [-85 -85]'; % [pre-I early-I aug-E post-I post-IpBC]
-    EL(2,1)    = [-60 -60]'; % [pre-I early-I aug-E post-I post-IpBC]
-    EsynE(2,1) = [  0   0]'; % [pre-I early-I aug-E post-I post-IpBC]
-    EsynI(2,1) = [-75 -75]'; % [pre-I early-I aug-E post-I post-IpBC]
-    EChR(2,1)  = [  0   0]'; % [pre-I early-I aug-E post-I post-IpBC]
+    ENa(2,1)   = [ 50  50]'; % [pre-I early-I]
+    EK(2,1)    = [-85 -85]'; % [pre-I early-I]
+    EL(2,1)    = [-60 -60]'; % [pre-I early-I]
+    EsynE(2,1) = [  0   0]'; % [pre-I early-I]
+    EsynI(2,1) = [-75 -75]'; % [pre-I early-I]
+    EChR(2,1)  = [  0   0]'; % [pre-I early-I]
     
     % Output Slope (for f(Vi)) [mV]
-    kV(2,1) = [-8 -4]'; % [pre-I early-I aug-E post-I post-IpBC]
+    kV(2,1) = [-8 -4]'; % [pre-I early-I]
     
     % Time Constants [ms]
-    Tao_hNaPmax(2,1) = [2000    1]'; % [pre-I early-I aug-E post-I post-IpBC] (1 is a placeholder value)
-    Tao_ADi(2,1)     = [   1 2000]'; % [pre-I early-I aug-E post-I post-IpBC] (1 is a placeholder value)
+    Tao_hNaPmax(2,1) = [2000    1]'; % [pre-I early-I] (1 is a placeholder value)
+    Tao_ADi(2,1)     = [   1 2000]'; % [pre-I early-I] (1 is a placeholder value)
+
     
     % Adaptation Parameters [-]
     kAD(2,1) = [1 0.9]'; % pre-I (placeholder)
@@ -52,7 +53,7 @@ classdef PVandEx
     sigmahNaP =   6;
 
     thetamK   = -30;
-    sigmamK   = -4;
+    sigmamK   =  -4;
     %==================================================================
 
     % Threshold Voltage [mV]===========================================

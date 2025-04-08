@@ -6,7 +6,7 @@ close all
 thisiClass = PVandEx;
 
 % Make Modifications as Needed
-% thisiClass.C(1) = 10;
+thisiClass.kV(2) = -6;
 
 % Run Sims
 [thisoClass] = solveNonSpiking(thisiClass);

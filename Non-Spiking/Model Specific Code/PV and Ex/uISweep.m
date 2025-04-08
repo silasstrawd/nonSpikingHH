@@ -5,7 +5,7 @@ close all
 % Initialize Input Class
 thisiClass = PVandEx;
 
-uIList = linspace(0,0.1,3);
+uIList = linspace(0,0.1,10);
 
 uIwaitbar = waitbar(0,'Processing Inhibitory Inputs...');
 
@@ -34,7 +34,9 @@ for ii = 1:length(uIList)
 
 end
 
-% plotNonSpiking(thisoClass)
+close(uIwaitbar)
+
+plotNonSpiking(thisoClass)
 
 % Plot BF vs uI
 figure('Color','w')
