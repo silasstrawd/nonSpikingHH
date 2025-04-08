@@ -45,3 +45,4 @@ grid minor
 ylabel("Steady State Network Frequency [Hz]")
 xlabel("Inhibitory Input Magnitude")
 title("Inhibitory Input to PV Neurons")
+yline(0.3422,"Label","Nominal (Ausborn 2018)") % [Hz] nominal from Ausborn
