@@ -6,18 +6,18 @@ close all
 thisiClass = Ausborn;
 
 % List of inhibitory inputs to apply to pre-BotC neurons
-dxIList = 0;
+% dxIList = 0;
 % dxIList = linspace(0,0.08,15);  % BotC
-% dxIList = linspace(0,0.012,10); % all
+dxIList = linspace(0,0.012,10); % all
 % dxIList = linspace(0,0.020,10); % inh
 % dxIList = linspace(0,0.150,10); % post-IpBC
 
 % Weights of dxI from EES
-preIw     = 0;
-earlyIw   = 0;
+preIw     = 1;
+earlyIw   = 1;
 postIpBCw = 0;
-augEw     = 1;
-postIw    = 1;
+augEw     = 0;
+postIw    = 0;
 
 for ii = 1:length(dxIList)
 

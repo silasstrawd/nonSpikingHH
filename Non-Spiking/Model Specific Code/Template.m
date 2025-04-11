@@ -6,7 +6,7 @@ close all
 thisiClass = PVandEx;
 
 % Make Modifications as Needed
-thisiClass.kV(2) = -6;
+% thisiClass.dxInom = [0.3 0 0 0 0]';
 
 % Run Sims
 [thisoClass] = solveNonSpiking(thisiClass);
