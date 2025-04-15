@@ -1,6 +1,6 @@
 function [thisoClass] = solveNonSpiking(nonSpikingiClass)
 
-%% This function takes an Ausborn input class, solves the ode, then returns an output class for further processing
+%% This function takes a nonspiking input class (e.g. Ausborn), solves the ode, then returns an output class for further processing
 
 % Assign excitatory and inhibitory connection strengths
 nonSpikingiClass.WE(nonSpikingiClass.Wnom > 0) = nonSpikingiClass.Wnom(nonSpikingiClass.Wnom > 0);

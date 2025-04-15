@@ -1,11 +1,10 @@
 function [peakStruct] = findNeuralPeaks(t,o,thisiClass)
 
 %% This function finds the peaks of a given output function [0 1)
-
 assert(min(o,[],"all") >= 0,'This function is for output functions on [0 1) only.')
 
-% Find top 5% largest values for each group
-top5 = prctile(o,95); % Gives the 95 percentile value for each group
+% Find top 5% values for each group
+top5 = prctile(o,95); % Gives the 95 percentile value for each neural group (row)
 
 for ii = 1:length(top5)
 
@@ -26,7 +25,7 @@ for ii = 1:length(top5)
     try
         thisGrouptopPeaks = findpeaks(thisGrouptop,thisGrouptopt,'MinPeakDistance',1);
 
-        % Find these peak values - this is gross there's gotta be a better way to do this
+        % Find the inds of the peak values
         idx = zeros(1,length(thisGrouptopPeaks));
         for jj = 1:length(thisGrouptopPeaks)
             idx(jj) = find(thiso == thisGrouptopPeaks(jj));
@@ -35,7 +34,7 @@ for ii = 1:length(top5)
         tPeaks = t(idx);
         oPeaks = o(idx,ii);
 
-            % Calculate burst frequency
+        % Calculate burst frequency
         BF = 1./diff(tPeaks);
     
         % Save the time and output values for the indices of the peaks you used
@@ -45,7 +44,7 @@ for ii = 1:length(top5)
         peakStruct.(thisGroup).f   = BF;
 
     catch
-        warning(sprintf("Could not calculate neural peaks for %s",thisGroup))
+        warning("Could not calculate neural peaks for %s",thisGroup)
         peakStruct.(thisGroup).t   = [];
         peakStruct.(thisGroup).o   = [];
         peakStruct.(thisGroup).idx = [];
