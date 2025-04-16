@@ -7,8 +7,9 @@ classdef NonSpikingOutputClass
         mAD  = [];
         o    = [];
         inputClassUsed = [];
-        peakStruct = [];
-        numNeurons = [];
+        peakStruct     = [];
+        integralStruct = [];
+        numNeurons     = [];
     end
 
     methods

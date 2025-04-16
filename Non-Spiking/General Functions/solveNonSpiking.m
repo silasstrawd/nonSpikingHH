@@ -41,5 +41,8 @@ thisoClass.numNeurons = numNeurons;
 thisoClass.o = o;
 thisoClass.peakStruct = peakStruct;
 
+% Calculate the integral under each burst
+thisoClass.integralStruct = integrateBurst(thisoClass);
+
 
 

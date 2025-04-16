@@ -23,9 +23,3 @@ end
 
 % Generate peakStruct for each neural group
 peakStruct = findNeuralPeaks(t,o,thisiClass);
-
-% Calculate the integral under each burst (see OneNote for description)
-% This code assumes that the bursts are periodic in steady state
-% (i.e. peak to peak integration is the same as trough to trough
-% for the same time interval)
-% integ = integrateBurst(peakStruct);
